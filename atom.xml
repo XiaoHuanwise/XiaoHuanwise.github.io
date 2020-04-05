@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://XiaoHuanwise.github.io</id>
     <title>小欢wise</title>
-    <updated>2020-04-05T03:50:36.671Z</updated>
+    <updated>2020-04-05T03:58:24.190Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://XiaoHuanwise.github.io"/>
     <link rel="self" href="https://XiaoHuanwise.github.io/atom.xml"/>
     <subtitle>站在巨人的肩膀上，眺望更远的彼岸！
-&lt;p id=&quot;hitokoto&quot;&gt;:D 获取中...&lt;/p&gt;
+&lt;p id=&quot;hitokoto&quot;&gt;&lt;/p&gt;
 &lt;script src=&quot;https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto&quot; defer&gt;&lt;/script&gt;</subtitle>
     <logo>https://XiaoHuanwise.github.io/images/avatar.png</logo>
     <icon>https://XiaoHuanwise.github.io/favicon.ico</icon>
