@@ -2,11 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://XiaoHuanwise.github.io</id>
     <title>小欢wise</title>
-    <updated>2020-04-03T12:32:17.798Z</updated>
+    <updated>2020-04-05T03:47:07.267Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://XiaoHuanwise.github.io"/>
     <link rel="self" href="https://XiaoHuanwise.github.io/atom.xml"/>
-    <subtitle>站在巨人的肩膀上，眺望更远的彼岸！</subtitle>
+    <subtitle>站在巨人的肩膀上，眺望更远的彼岸！
+&lt;script src=&quot;https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto&quot; defer&gt;&lt;/script&gt;</subtitle>
     <logo>https://XiaoHuanwise.github.io/images/avatar.png</logo>
     <icon>https://XiaoHuanwise.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 小欢wise</rights>
@@ -17,6 +18,6 @@
         </link>
         <updated>2020-03-24T04:05:34.000Z</updated>
         <content type="html"><![CDATA[<p>F12   console    window.<strong>INITIAL_STATE</strong>.aid</p>
-<script type="text/javascript"<src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>]]></content>
+]]></content>
     </entry>
 </feed>
