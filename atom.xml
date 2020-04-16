@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://XiaoHuanwise.github.io</id>
     <title>小欢wise</title>
-    <updated>2020-04-05T13:42:48.422Z</updated>
+    <updated>2020-04-16T08:50:23.295Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://XiaoHuanwise.github.io"/>
     <link rel="self" href="https://XiaoHuanwise.github.io/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://XiaoHuanwise.github.io/images/avatar.png</logo>
     <icon>https://XiaoHuanwise.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 小欢wise</rights>
+    <entry>
+        <title type="html"><![CDATA[绕过PanDownload连接服务器复活PD]]></title>
+        <id>https://XiaoHuanwise.github.io/post/rao-guo-pandownload-lian-jie-fu-wu-qi-fu-huo-pd/</id>
+        <link href="https://XiaoHuanwise.github.io/post/rao-guo-pandownload-lian-jie-fu-wu-qi-fu-huo-pd/">
+        </link>
+        <updated>2020-04-16T08:35:09.000Z</updated>
+        <content type="html"><![CDATA[<p>具体操作很简单，首先需要下载几个文件（下载在评论区，可以复制）</p>
+<ol>
+<li>带有脚本缓存的Pandownload    https://lanzous.com/ibhfw1g （如果原来时候用过PanDownload并且正常登录使用过，这个文件不需要下载）</li>
+<li>假服务器文件 https://lanzous.com/ibhfw2h</li>
+<li>Python   https://www.python.org/downloads/ （如果已经安装，就不用下载了，检测有没有安装的方法是在桌面按下Shift键，然后点击右键，选择在此处打开Powershell，之后在弹出的窗口中输入，如果下面出现一大长串就说明装了，如果提示无法将“python”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。那就是没装，python 3的安装教程B站多如牛毛，自行查找安装）</li>
+</ol>
+<p>复活过程（命令在评论区，可以复制）<br>
+解压假服务器文件，打开解压好的文件夹，按下Shift键，然后点击右键在此处打开Powershell，之后在弹出的窗口中输入 python -m http.server 80 之后回车<br>
+不要关闭窗口 ，之后打开 C:/WINDOWS/system32/drivers/etc/ 文件夹，使用记事本打开hosts文件，在最后一行加上127.0.0.1 pandownload.com<br>
+保存，之后在左下角开始菜单的图标上点击右键，选择 Windows PowerShell（管理员），在打开的框中输入ipconfig /flushdns<br>
+回车，关闭窗口即可，打开原来用过的Pandownload或者是我提供的Pandownload，即可正常登录。<br>
+提供假服务器数据的作者Github链接 https://github.com/TkzcM/pandownload-fake-server<br>
+由于请求内有算法生成的bdc token，此方法的有效时间未知，且用且珍惜<br>
+转自：https://www.bilibili.com/read/cv5641021<br>
+下图为伪服务器文件.zip<br>
+<img src="https://i.loli.net/2020/04/16/fFzGB8UxQt2wa7h.png" alt="server.png" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[bilibili 看av号]]></title>
         <id>https://XiaoHuanwise.github.io/post/bilibili-kan-av-hao/</id>
