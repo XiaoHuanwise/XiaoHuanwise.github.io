@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>关于 | 小欢wise</title>
-<link rel="shortcut icon" href="https://XiaoHuanwise.github.io/favicon.ico?v=1587027019508">
+<link rel="shortcut icon" href="https://XiaoHuanwise.github.io/favicon.ico?v=1587437774256">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://XiaoHuanwise.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="关于 | 小欢wise - Atom Feed" href="https://XiaoHuanwise.github.io/atom.xml">
@@ -28,15 +28,37 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://XiaoHuanwise.github.io">
-  <img class="avatar" src="https://XiaoHuanwise.github.io/images/avatar.png?v=1587027019508" alt="">
+  <img class="avatar" src="https://XiaoHuanwise.github.io/images/avatar.png?v=1587437774256" alt="">
   </a>
   <h1 class="site-title">
     小欢wise
   </h1>
   <p class="site-description">
     站在巨人的肩膀上，眺望更远的彼岸！
+	<!-- <p id="hitokoto">:D 获取中...</p> -->
+	<!-- <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><br /> -->
 	<p id="hitokoto">:D 获取中...</p>
-	<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><br />
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open('get', 'https://v1.hitokoto.cn');
+		  xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+			  var data = JSON.parse(xhr.responseText);
+			  var hitokoto = document.getElementById('hitokoto');
+			  hitokoto.innerText = "『" + data.hitokoto + "』";
+			  if (data.from_who !== null || data.from !== null) {
+				hitokoto.innerText += "——";
+				if (data.from_who !== null) {
+					hitokoto.innerText += data.from_who;
+				}
+				if (data.from !== null) {
+					hitokoto.innerText += "「" + data.from + "」";
+				}
+			  } 
+			}
+		  }
+		  xhr.send();
+	</script><br />
 	<a href="https://time.is/China" id="time_is_link" rel="nofollow" style="font-size:24px">中国时间:</a>
 	<span id="China_z43d" style="font-size:24px"></span>
 	<script src="//widget.time.is/zh.js"></script>
