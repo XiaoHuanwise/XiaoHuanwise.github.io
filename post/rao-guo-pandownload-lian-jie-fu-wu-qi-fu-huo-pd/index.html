@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>绕过PanDownload连接服务器复活PD | 小欢wise</title>
-<link rel="shortcut icon" href="https://XiaoHuanwise.github.io/favicon.ico?v=1587437774256">
+<link rel="shortcut icon" href="https://XiaoHuanwise.github.io/favicon.ico?v=1587647163334">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://XiaoHuanwise.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="绕过PanDownload连接服务器复活PD | 小欢wise - Atom Feed" href="https://XiaoHuanwise.github.io/atom.xml">
@@ -23,7 +23,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://XiaoHuanwise.github.io">
-  <img class="avatar" src="https://XiaoHuanwise.github.io/images/avatar.png?v=1587437774256" alt="">
+  <img class="avatar" src="https://XiaoHuanwise.github.io/images/avatar.png?v=1587647163334" alt="">
   </a>
   <h1 class="site-title">
     小欢wise
@@ -60,6 +60,227 @@
 	<script>
 	time_is_widget.init({China_z43d:{template:"TIME<br>DATE<br>SUN", date_format:"year年monthnamednum日dayname，第week周", sun_format:"日出: srhour:srminute 日落: sshour:ssminute<br>昼长: dlhours时 dlminutes分", coords:"35.0000000,105.0000000"}});
 	</script>
+	<script>
+        window.hitokoto_playlist = 2158283120;
+        // CheckOS
+        var os = function () {
+            var ua = navigator.userAgent,
+                isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                isAndroid = /(?:Android)/.test(ua),
+                isFireFox = /(?:Firefox)/.test(ua),
+                isChrome = /(?:Chrome|CriOS)/.test(ua),
+                isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox &&
+                    /(?:Tablet)/.test(ua)),
+                isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                isPc = !isPhone && !isAndroid && !isSymbian;
+            return {
+                isTablet: isTablet,
+                isPhone: isPhone,
+                isAndroid: isAndroid,
+                isPc: isPc
+            };
+        }();
+
+        // Animate
+        $.fn.extend({
+            animateCss: function (animationName, callback) {
+                var animationEnd = (function (el) {
+                    var animations = {
+                        animation: 'animationend',
+                        OAnimation: 'oAnimationEnd',
+                        MozAnimation: 'mozAnimationEnd',
+                        WebkitAnimation: 'webkitAnimationEnd',
+                    };
+
+                    for (var t in animations) {
+                        if (el.style[t] !== undefined) {
+                            return animations[t];
+                        }
+                    }
+                })(document.createElement('div'));
+
+                this.addClass('animated ' + animationName).one(animationEnd, function () {
+                    $(this).removeClass('animated ' + animationName);
+
+                    if (typeof callback === 'function') callback();
+                });
+
+                return this;
+            },
+        });
+
+        function tadaHeart() {
+            $('#like_number1').animateCss('tada');
+            $('#like_number2').animateCss('tada');
+        }
+        var tada = window.setInterval(tadaHeart, 600);
+
+        // Love Hitokoto !
+        var like_num = 13;
+        var sentenceUUID = "b215d3f2-e355-4306-b635-beb57a36470f";
+
+        function loveHitokoto() {
+            fetch("https://v1.hitokoto.cn?encode=json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    fetch("/api/common/v1/like?sentence_uuid=" + data.uuid)
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (result) {
+                            // Update Like
+                            sentenceUUID = data.uuid;
+                            like_num = result.data[0].total;
+                            $("#like_number1").attr("data-badge", result.data[0].total);
+                            $("#like_number2").attr("data-badge", result.data[0].total);
+
+                            if ($('#hitokoto').hasClass("animated")) {
+                                $('#hitokoto').removeClass("animated");
+                                $('#hitokoto').removeClass("fadeIn");
+                            }
+                            $('#hitokoto').animateCss('bounce');
+                            $('#hitokoto_text').text(data.hitokoto);
+                            var author = !!data.from ? data.from : "无名氏";
+                            $('#hitokoto_author').text("—— " + (data.from_who || '') + "「" + author + "」");
+                            window.setTimeout(loveHitokoto, 10000);
+                        })
+                        .catch(function (err) {
+                            console.error(`在更新一言时捕获错误， 错误信息: ${err.message}. 当前时间: ${new Date().toISOString()}`);
+                            loveHitokoto();
+                        });
+                })
+                .catch(function (err) {
+                    console.error(`在更新一言时捕获错误， 错误信息: ${err.message}. 当前时间: ${new Date().toISOString()}`);
+                    loveHitokoto();
+                });
+        }
+        var isID = 0;
+        if (!isID) {
+            window.setTimeout(loveHitokoto, 10000);
+        }
+        APlayer.prototype.add163 = function add163(id) {
+            if (!id) throw new Error("Unable Property.");
+            return fetch163Song(id)
+                .then(function (data) {
+                    var obj = {
+                        name: data[0].name,
+                        artist: data[0].artist,
+                        cover: data[0].pic,
+                        url: data[0].url,
+                        lrc: data[0].lrc.base
+                    };
+                    this.list.add(obj);
+                    return obj;
+                }.bind(this))
+        };
+        if (os.isTablet || os.isPc) {
+            // Active player
+            // CheckCookie
+            var player_auto = Cookies.get('player_auto');
+            if (player_auto) {
+                // isAuto
+                if (player_auto === "autod") {
+                    activePlayer();
+                } else {
+                    activePlayer(false);
+                }
+            } else {
+                swal("是否需要播放我们精选的乐曲来欣赏一言呢？", {
+                    buttons: {
+                        cancel: "拒绝",
+                        allow: "好的"
+                    }
+                })
+                    .then(function (value) {
+                        if (value == "allow") {
+                            activePlayer();
+                            Cookies.set('player_auto', 'autod', { expires: 365 });
+                        } else {
+                            // do nothing
+                            activePlayer(false);
+                            Cookies.set('player_auto', 'no', { expires: 365 });
+                        }
+                    });
+            }
+        }
+        function activePlayer(auto = true) {
+            fetch163Playlist(window.hitokoto_playlist)
+                .then(function (data) {
+                    var songs = [];
+                    data.map(function (song) {
+                        songs.push({
+                            name: song.name,
+                            artist: song.artist,
+                            cover: song.pic,
+                            url: song.url,
+                            lrc: song.lrc.base
+                        });
+                    });
+                    return songs;
+                })
+                .then(function (songs) {
+                    window.player = new APlayer({
+                        container: document.getElementById('aplayer'),
+                        lrcType: 1,
+                        fixed: true,
+                        autoplay: auto,
+                        preload: 'metadata',
+                        audio: songs
+                    });
+                    window.player.lrc.toggle();
+                    window.player.volume(0.5);
+                    $("#active_player").text("暂停");
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    </script>
+    <script type="text/javascript">
+        // var like_num=13;
+        function like(uuid) {
+            fetch("/api/common/v1/like?sentence_uuid=" + uuid, {
+                method: 'post',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    swal(data.status === 200 ? '谢谢主人的喜欢~' : '句子已经感受到主人的爱了哦！', { button: "好的" });
+                    if (data.status === 200) {
+                        $("#like_number1").attr("data-badge", like_num + 1);
+                        $("#like_number2").attr("data-badge", like_num + 1);
+                    }
+                });
+        }
+
+        $(".doLike").click(function () {
+            // alert(sid);
+            like(sentenceUUID);
+        });
+        $("#active_player").click(function () {
+            if (window.player) {
+                if (!window.player.audio.paused) {
+                    // pause
+                    window.player.pause();
+                    $("#active_player").text("播放");
+                } else {
+                    // play
+                    window.player.play();
+                    $("#active_player").text("暂停");
+                }
+            } else {
+                // active
+                activePlayer();
+            }
+        });
+    </script>
   </p><br />
   <div class="menu-container">
     
