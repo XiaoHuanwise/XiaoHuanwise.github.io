@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://XiaoHuanwise.github.io</id>
     <title>小欢wise</title>
-    <updated>2020-06-11T16:07:13.244Z</updated>
+    <updated>2021-09-06T01:13:16.388Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://XiaoHuanwise.github.io"/>
     <link rel="self" href="https://XiaoHuanwise.github.io/atom.xml"/>
     <subtitle>站在巨人的肩膀上，眺望更远的彼岸！</subtitle>
     <logo>https://XiaoHuanwise.github.io/images/avatar.png</logo>
     <icon>https://XiaoHuanwise.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 小欢wise</rights>
+    <rights>All rights reserved 2021, 小欢wise</rights>
     <entry>
         <title type="html"><![CDATA[轨道力学常用公式笔记]]></title>
         <id>https://XiaoHuanwise.github.io/post/gui-dao-li-xue-chang-yong-gong-shi-bi-ji/</id>
